@@ -9,7 +9,10 @@ export const metadata: Metadata = {
   description:
     "Orvion builds innovative AI-based mobile applications like Nutrai and Dermai to transform everyday experiences.",
   generator: "v0.dev",
-}
+  icons: {
+    icon: "/logo_transparent.png",
+  },
+};
 
 export default function RootLayout({
   children,
