@@ -9,64 +9,39 @@ import Link from "next/link"
 import Image from "next/image"
 import { motion } from "framer-motion"
 import { ListItem } from "@/components/ui/list-item"
+import { Header } from "@/components/ui/header"
 
 const MotionCard = motion(Card)
 
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      {/* Header */}
-      <header className="px-8 lg:px-12 h-20 flex items-center border-b border-gray-200">
-        <Link href="/" className="flex items-center justify-center">
-          <Image
-            src="/logo_transparent.png"
-            alt="Orvion Logo"
-            width={40}
-            height={40}
-            style={{ filter: "brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(2588%) hue-rotate(125deg) brightness(94%) contrast(96%)" }}
-          />
-          <span className="ml-3 text-3xl font-bold text-orvion-green font-sans">Orvion</span>
-        </Link>
-        <nav className="ml-auto flex items-center gap-6 sm:gap-8">
-          <Link
-            href="#apps"
-            className="text-lg font-medium text-orvion-dark hover:text-orvion-green transition-colors"
-          >
-            Apps
-          </Link>
-          <Link
-            href="#about"
-            className="text-lg font-medium text-orvion-dark hover:text-orvion-green transition-colors"
-          >
-            About
-          </Link>
-          <Link
-            href="#contact"
-            className="text-lg font-medium text-orvion-dark hover:text-orvion-green transition-colors"
-          >
-            Contact
-          </Link>
-        </nav>
-      </header>
+      <Header />
 
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-20 md:py-32 lg:py-40 bg-white">
+        <section className="w-full py-12 md:py-24 lg:py-32 bg-white">
           <div className="container px-4 md:px-6 mx-auto">
-            <div className="grid gap-8 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
               <motion.div
                 initial={{ opacity: 0, x: -50 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.8 }}
                 className="flex justify-center"
               >
-                <Image
-                  src="/logo_transparent.png"
-                  alt="Orvion Logo"
-                  width={300}
-                  height={300}
-                  style={{ filter: "brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(2588%) hue-rotate(125deg) brightness(94%) contrast(96%)" }}
-                />
+                <div className="w-[150px] md:w-[200px] lg:w-[300px]">
+                  <Image
+                    src="/logo_transparent.png"
+                    alt="Orvion Logo"
+                    width={1000}
+                    height={1000}
+                    className="h-auto w-full"
+                    style={{
+                      filter:
+                        "brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(2588%) hue-rotate(125deg) brightness(94%) contrast(96%)",
+                    }}
+                  />
+                </div>
               </motion.div>
               <motion.div
                 initial={{ opacity: 0, y: 50 }}
@@ -74,11 +49,13 @@ export default function Component() {
                 transition={{ duration: 0.8, delay: 0.2 }}
                 className="flex flex-col justify-center space-y-4 text-center lg:text-left"
               >
-                <h1 className="text-6xl font-bold tracking-tighter sm:text-7xl xl:text-8xl/none text-orvion-green font-sans">
+                <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl/none text-orvion-green font-sans">
                   ORVION
                 </h1>
-                <p className="text-4xl text-orvion-green font-lora">Orchestrating Vision</p>
-                <div className="flex flex-col gap-2 min-[400px]:flex-row pt-6">
+                <p className="text-2xl md:text-3xl lg:text-4xl text-orvion-green font-lora">
+                  Orchestrating Vision
+                </p>
+                <div className="flex flex-col gap-2 min-[400px]:flex-row pt-6 justify-center lg:justify-start">
                   <Link href="#apps">
                     <Button className="bg-orvion-green hover:bg-orvion-green/90 text-white">Explore Our Apps</Button>
                   </Link>
@@ -99,7 +76,7 @@ export default function Component() {
         {/* About Us Section */}
         <motion.section
           id="about"
-          className="w-full py-20 md:py-32 bg-orvion-dark/5"
+          className="w-full py-12 md:py-24 lg:py-32 bg-orvion-dark/5"
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -109,11 +86,11 @@ export default function Component() {
             <div className="flex flex-col items-center justify-center space-y-8 text-center">
               <div className="space-y-4">
                 <Badge className="bg-orvion-green text-white">Our Story</Badge>
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl text-orvion-dark">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-orvion-dark">
                   Pioneering the Next Wave of Mobile AI
                 </h2>
                 <motion.p
-                  className="max-w-[800px] text-orvion-dark/80 md:text-xl"
+                  className="max-w-[800px] text-orvion-dark/80 text-base md:text-lg lg:text-xl"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -156,10 +133,10 @@ export default function Component() {
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
               <div className="space-y-2">
                 <Badge className="bg-orvion-green text-white">Our Products</Badge>
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl text-orvion-dark">
+                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-orvion-dark">
                   AI-Powered Mobile Apps
                 </h2>
-                <p className="max-w-[900px] text-orvion-dark/70 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+                <p className="max-w-[900px] text-orvion-dark/70 text-base md:text-lg lg:text-xl/relaxed">
                   Discover our flagship applications that leverage cutting-edge AI to solve real-world problems
                 </p>
               </div>

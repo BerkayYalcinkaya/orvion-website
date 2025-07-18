@@ -10,7 +10,11 @@ export const metadata: Metadata = {
     "Orvion builds innovative AI-based mobile applications like Nutrai and Dermai to transform everyday experiences.",
   generator: "v0.dev",
   icons: {
-    icon: "/logo_transparent.png",
+    icon: [
+      { url: "/orvion_logo.png", sizes: "32x32" },
+      { url: "/orvion_logo.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/orvion_logo.png",
   },
 };
 
