@@ -171,7 +171,9 @@ export default function Component() {
                       Calorie Tracking
                     </Badge>
                   </div>
-                  <Button className="w-full bg-orvion-green hover:bg-orvion-green/90 text-white">Coming Soon</Button>
+                  <Link href="/nutrai">
+                    <Button className="w-full bg-orvion-green hover:bg-orvion-green/90 text-white">Learn More</Button>
+                  </Link>
                 </CardContent>
               </MotionCard>
 
