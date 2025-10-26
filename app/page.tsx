@@ -4,436 +4,351 @@
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Users, Zap, Smartphone, Sparkles, Apple, Play, ArrowRight, Camera, Video, Star } from "lucide-react"
+import { Users, Zap, Smartphone, Sparkles, Apple, Play, ArrowRight, Camera, Video, Star, Share2, Wand2, Award } from "lucide-react"
 import Link from "next/link"
 import Image from "next/image"
-import { motion } from "framer-motion"
+import { motion, useScroll, useTransform } from "framer-motion"
 import { ListItem } from "@/components/ui/list-item"
-import { Header } from "@/components/ui/header"
+import { IPhoneMockup } from "@/components/ui/iphone-mockup"
 
 const MotionCard = motion(Card)
 
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
-      <Header />
-
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full py-12 md:py-24 lg:py-32 bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 relative overflow-hidden">
-          {/* Animated background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-40 -right-40 w-80 h-80 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute top-40 left-40 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-          </div>
-          
+        <section className="w-full min-h-screen flex items-center justify-center bg-[#96213A] relative overflow-hidden">
           <div className="container px-4 md:px-6 mx-auto relative z-10">
-            <div className="grid gap-6 lg:grid-cols-2 lg:gap-12 items-center">
+            <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12 text-center max-w-5xl mx-auto">
+              {/* Logo - Back on top and bigger */}
               <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="flex justify-center"
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="w-[350px] md:w-[500px] lg:w-[650px] xl:w-[750px]"
               >
-                <div className="w-[150px] md:w-[200px] lg:w-[300px] relative">
-                  <Image
-                    src="/logo_transparent.png"
-                    alt="Orvion Logo"
-                    width={1000}
-                    height={1000}
-                    className="h-auto w-full"
-                    style={{
-                      filter:
-                        "brightness(0) saturate(100%) invert(13%) sepia(50%) saturate(2588%) hue-rotate(125deg) brightness(94%) contrast(96%)",
-                    }}
-                  />
-                  {/* Floating elements around logo */}
-                  <motion.div
-                    animate={{ y: [-10, 10, -10] }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                    className="absolute -top-4 -right-4 w-8 h-8 bg-green-400 rounded-full opacity-60"
-                  />
-                  <motion.div
-                    animate={{ y: [10, -10, 10] }}
-                    transition={{ duration: 2.5, repeat: Infinity }}
-                    className="absolute -bottom-4 -left-4 w-6 h-6 bg-blue-400 rounded-full opacity-60"
-                  />
-                </div>
+                <Image
+                  src="/logo-transparent.svg"
+                  alt="Orvion Logo"
+                  width={254}
+                  height={77}
+                  className="h-auto w-full"
+                  priority
+                />
               </motion.div>
+
+              {/* Text content - Back below logo and smaller */}
               <motion.div
-                initial={{ opacity: 0, y: 50 }}
+                initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="flex flex-col justify-center space-y-6 text-center lg:text-left"
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="space-y-4"
               >
-                <div className="space-y-2">
-                  <Badge className="bg-green-100 text-green-800 border-green-200 w-fit mx-auto lg:mx-0">
-                    Orvion Digital
-                  </Badge>
-                  <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl/none text-orvion-green font-sans">
-                    ORVION
-                  </h1>
-                </div>
-                <p className="text-2xl md:text-3xl lg:text-4xl text-orvion-green font-lora">
-                  AI at your fingertips, developing the future of mobile AI
-                </p>
-                <p className="text-lg md:text-xl text-gray-600 max-w-[600px]">
+                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-wide text-white/90 font-lora max-w-3xl mx-auto">
+                  Creating what's next in AI Native Mobile
+                </h1>
+                <p className="text-sm md:text-base lg:text-lg xl:text-xl text-white/70 max-w-2xl mx-auto">
                   Experience the next generation of AI-powered mobile applications that transform how you live, work, and create.
                 </p>
-                <div className="flex flex-col gap-3 min-[400px]:flex-row pt-6 justify-center lg:justify-start">
-                  <Link href="#apps">
-                    <Button className="bg-orvion-green hover:bg-orvion-green/90 text-white text-lg px-8 py-3">
-                      Explore Our Apps
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Button>
-                  </Link>
-                  <Link href="#about">
-                    <Button
-                      variant="outline"
-                      className="border-orvion-blue text-orvion-blue hover:bg-orvion-blue hover:text-white bg-transparent text-lg px-8 py-3"
-                    >
-                      Learn More
-                    </Button>
-                  </Link>
-                </div>
+              </motion.div>
+
+              {/* CTA Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.6 }}
+                className="flex flex-col sm:flex-row gap-4 pt-4"
+              >
+                <Link href="#apps">
+                  <Button className="bg-white text-[#96213A] hover:bg-white/90 text-lg px-8 py-6 rounded-full shadow-lg">
+                    Explore Our Apps
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    variant="outline"
+                    className="border-white text-white hover:bg-white/10 bg-transparent text-lg px-8 py-6 rounded-full"
+                  >
+                    Contact Us
+                  </Button>
+                </Link>
               </motion.div>
             </div>
           </div>
         </section>
 
-        {/* About Us Section */}
-        <motion.section
-          id="about"
-          className="w-full py-16 md:py-24 lg:py-32 bg-gradient-to-br from-orvion-dark/5 via-orvion-green/5 to-orvion-blue/5 relative overflow-hidden"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* Animated background elements */}
-          <div className="absolute inset-0 overflow-hidden">
-            <div className="absolute -top-20 -right-20 w-40 h-40 bg-orvion-green/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob"></div>
-            <div className="absolute -bottom-20 -left-20 w-40 h-40 bg-orvion-blue/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000"></div>
-            <div className="absolute top-20 left-1/2 w-40 h-40 bg-purple-200/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000"></div>
-          </div>
-          
-          <div className="container px-4 md:px-6 mx-auto relative z-10">
-            <div className="flex flex-col items-center justify-center space-y-12 text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8 }}
-                className="space-y-6"
-              >
-                <Badge className="bg-orvion-green text-white text-lg px-4 py-2">Our Story</Badge>
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-orvion-dark">
-                  Pioneering the Next Wave of Mobile AI
-                </h2>
-              </motion.div>
-              
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.2 }}
-                className="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto"
-              >
-                <div className="space-y-4">
-                  <div className="w-16 h-16 bg-orvion-green/20 rounded-full flex items-center justify-center mx-auto">
-                    <Sparkles className="w-8 h-8 text-orvion-green" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-orvion-dark">Innovation First</h3>
-                  <p className="text-orvion-dark/70 text-sm md:text-base">
-                    Born in early 2025 with a mission to revolutionize the non-gaming mobile app sector through cutting-edge AI technology.
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="w-16 h-16 bg-orvion-blue/20 rounded-full flex items-center justify-center mx-auto">
-                    <Zap className="w-8 h-8 text-orvion-blue" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-orvion-dark">Market Leadership</h3>
-                  <p className="text-orvion-dark/70 text-sm md:text-base">
-                    At the forefront of a market projected to reach $17.8 billion by 2030, with 30.1% annual growth.
-                  </p>
-                </div>
-                
-                <div className="space-y-4">
-                  <div className="w-16 h-16 bg-purple-200/20 rounded-full flex items-center justify-center mx-auto">
-                    <Users className="w-8 h-8 text-purple-600" />
-                  </div>
-                  <h3 className="text-xl font-semibold text-orvion-dark">User-Centric</h3>
-                  <p className="text-orvion-dark/70 text-sm md:text-base">
-                    Creating intelligent, user-centric applications that transform everyday experiences and push boundaries.
-                  </p>
-                </div>
-              </motion.div>
+        {/* Nutrai App Section - Full Screen */}
+          <section id="apps" className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-nutrai-blue via-nutrai-blue to-blue-600 relative overflow-hidden">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
             </div>
-          </div>
-        </motion.section>
-
-        {/* Apps Section */}
-        <motion.section
-          id="apps"
-          className="w-full pt-16 md:pt-24 lg:pt-32 pb-0 bg-gradient-to-b from-white via-blue-50 to-blue-100 relative overflow-hidden"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          {/* subtle animated blobs for smoother transition */}
-          <div className="absolute inset-0 -z-0 pointer-events-none">
-            <div className="absolute -top-24 right-10 w-40 h-40 bg-blue-200/40 rounded-full blur-3xl animate-blob" />
-            <div className="absolute bottom-0 left-0 w-56 h-56 bg-orvion-green/20 rounded-full blur-3xl animate-blob animation-delay-2000" />
-          </div>
-          <div className="container px-4 md:px-6 mx-auto relative z-10">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex flex-col items-center justify-center space-y-6 text-center mb-8 md:mb-12"
-            >
-              <div className="space-y-6">
-                <Badge className="bg-orvion-green text-white text-lg px-4 py-2">Our Applications</Badge>
-                <h2 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-orvion-dark">
-                  Discover Our Flagship Applications
-                </h2>
-                <p className="max-w-[800px] text-orvion-dark/80 text-lg md:text-xl">
-                  Experience the future of mobile AI with our cutting-edge applications
-                </p>
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Nutrai App Section - Full Width */}
-          <section className="w-full py-12 md:py-20 lg:py-28 bg-gradient-to-r from-blue-50 to-blue-100">
-            <div className="container px-4 md:px-6 mx-auto">
-              <div className="grid gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+            
+            <div className="container px-4 md:px-8 lg:px-16 mx-auto relative z-10">
+              <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center">
+                {/* Left Side - Content */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="flex justify-center lg:justify-start order-1"
+                  className="flex flex-col space-y-6 text-white"
                 >
-                  <div className="w-[200px] md:w-[250px] lg:w-[300px] relative">
-                    <Image
-                      src="/nutrai_logo.png"
-                      alt="Nutrai Logo"
-                      width={300}
-                      height={300}
-                      className="h-auto w-full"
-                    />
-                                         {/* Floating elements */}
-                     <motion.div
-                       animate={{ y: [-5, 5, -5] }}
-                       transition={{ duration: 2, repeat: Infinity }}
-                       className="absolute -top-2 -right-2 w-4 h-4 bg-blue-400 rounded-full opacity-60"
-                     />
-                     <motion.div
-                       animate={{ y: [5, -5, 5] }}
-                       transition={{ duration: 1.5, repeat: Infinity }}
-                       className="absolute -bottom-2 -left-2 w-3 h-3 bg-blue-500 rounded-full opacity-60"
-                     />
+                  {/* App Icon & Title */}
+                  <div className="flex items-center space-x-4">
+                    <div className="w-20 h-20 rounded-3xl bg-[#3253a1] p-3 flex items-center justify-center shadow-lg">
+                      <Image
+                        src="/nutrai_logo.png"
+                        alt="Nutrai"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-4xl md:text-5xl font-bold">Nutrai</h3>
+                      <p className="text-lg text-white/80">AI Nutrition Assistant</p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-lg">
+                    Your personal AI nutritionist that helps you achieve your health goals. 
+                    Get personalized meal plans, track calories, and receive expert nutrition 
+                    advice powered by advanced AI technology.
+                  </p>
+
+                  {/* Store Buttons */}
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <Link href="https://apps.apple.com/tr/app/nutrai-diyet-kalori-takibi/id6746746820?l=tr" target="_blank" className="hover:opacity-80 transition-opacity">
+                      <Image
+                        src="/app-store.png"
+                        alt="Download on the App Store"
+                        width={180}
+                        height={60}
+                        className="h-12 w-auto"
+                      />
+                    </Link>
+                    <Link href="https://play.google.com" target="_blank" className="hover:opacity-80 transition-opacity">
+                      <Image
+                        src="/google-play.png"
+                        alt="Get it on Google Play"
+                        width={180}
+                        height={60}
+                        className="h-12 w-auto"
+                      />
+                    </Link>
                   </div>
                 </motion.div>
+
+                {/* Center - iPhone Mockup */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex justify-center"
+                >
+                  <IPhoneMockup 
+                    logoSrc="/nutrai_logo.png" 
+                    logoAlt="Nutrai App"
+                    backgroundColor="bg-[#3253a1]"
+                  />
+                </motion.div>
+
+                {/* Right Side - Stats */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="space-y-5 md:space-y-6 text-center lg:text-left order-2"
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="flex flex-col items-center lg:items-start space-y-8 text-white"
                 >
-                                     <div className="space-y-4">
-                     <Badge className="bg-blue-100 text-blue-800 border-blue-200">AI-Powered Nutrition</Badge>
-                     <h3 className="text-4xl font-bold tracking-tighter sm:text-5xl text-gray-900">
-                       Nutrai
-                     </h3>
-                     <p className="text-xl md:text-2xl text-gray-600">
-                       Your personal AI nutritionist for healthier living
-                     </p>
-                     <p className="text-gray-600 text-lg">
-                       Revolutionary diet tracking that analyzes your meals with just one photo. Get personalized, tailored
-                       diet plans for every day based on AI-powered nutritional analysis. Transform your relationship with food
-                       and achieve your health goals with intelligent insights.
-                     </p>
-                   </div>
-                   
-                   <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                     <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                       <Camera className="w-3 h-3 mr-1" />
-                       Photo Analysis
-                     </Badge>
-                     <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                       <Star className="w-3 h-3 mr-1" />
-                       Personalized Plans
-                     </Badge>
-                     <Badge variant="secondary" className="bg-blue-100 text-blue-800">
-                       <Zap className="w-3 h-3 mr-1" />
-                       Calorie Tracking
-                     </Badge>
-                   </div>
-                   
-                   <div className="flex flex-col gap-3 min-[400px]:flex-row pt-6 justify-center lg:justify-start">
-                     <Button className="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-3">
-                       <Apple className="w-5 h-5 mr-2" />
-                       Download on App Store
-                     </Button>
-                     <Link href="/nutrai">
-                       <Button variant="outline" className="border-blue-600 text-blue-600 hover:bg-blue-50 text-lg px-8 py-3">
-                         Explore More
-                         <ArrowRight className="w-5 h-5 ml-2" />
-                       </Button>
-                     </Link>
-                   </div>
+                  {/* Badge */}
+                  <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
+                    <Award className="w-6 h-6" />
+                    <span className="text-lg font-semibold">#1 Health App</span>
+                  </div>
+
+                  <div className="w-full max-w-xs space-y-6">
+                    {/* Downloads */}
+                    <div className="text-center lg:text-left">
+                      <div className="text-5xl md:text-6xl font-bold">2M+</div>
+                      <div className="text-xl text-white/80 mt-2">DOWNLOADS</div>
+                    </div>
+
+                    <div className="h-px bg-white/20"></div>
+
+                    {/* Rating */}
+                    <div className="text-center lg:text-left">
+                      <div className="flex items-center justify-center lg:justify-start space-x-2">
+                        <span className="text-5xl md:text-6xl font-bold">4.8</span>
+                        <div className="flex space-x-1 mt-2">
+                          {[...Array(5)].map((_, i) => (
+                            <svg
+                              key={i}
+                              className="w-6 h-6 fill-yellow-400"
+                              viewBox="0 0 24 24"
+                            >
+                              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                            </svg>
+                          ))}
+                        </div>
+                      </div>
+                      <div className="text-xl text-white/80 mt-2">RATING</div>
+                    </div>
+
+                    <div className="h-px bg-white/20"></div>
+
+                    {/* Users */}
+                    <div className="text-center lg:text-left">
+                      <div className="text-5xl md:text-6xl font-bold">500K+</div>
+                      <div className="text-xl text-white/80 mt-2">ACTIVE USERS</div>
+                    </div>
+                  </div>
                 </motion.div>
               </div>
             </div>
           </section>
 
-          {/* Unwrap App Section - Full Width */}
-          <section className="w-full pt-12 md:pt-20 lg:pt-28 pb-8 md:pb-10 lg:pb-12 bg-gradient-to-r from-purple-50 to-purple-100">
-            <div className="container px-4 md:px-6 mx-auto">
-              <div className="grid gap-10 md:gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+          {/* Genso App Section - Full Screen */}
+          <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-genso-navy via-genso-navy to-gray-900 relative overflow-hidden">
+            {/* Animated background elements */}
+            <div className="absolute inset-0 overflow-hidden">
+              <div className="absolute -top-40 -right-40 w-80 h-80 bg-genso-cyan/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
+              <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
+            </div>
+            
+            <div className="container px-4 md:px-8 lg:px-16 mx-auto relative z-10">
+              <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center">
+                {/* Left Side - Content */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="flex justify-center lg:justify-start order-1"
+                  className="flex flex-col space-y-6 text-white"
                 >
-                  <div className="w-[200px] md:w-[250px] lg:w-[300px] relative">
-                    <Image
-                      src="/unwrap-logo.png"
-                      alt="Unwrap Logo"
-                      width={300}
-                      height={300}
-                      className="h-auto w-full"
-                    />
-                    {/* Floating elements */}
-                    <motion.div
-                      animate={{ y: [-5, 5, -5] }}
-                      transition={{ duration: 2, repeat: Infinity }}
-                      className="absolute -top-2 -right-2 w-4 h-4 bg-purple-400 rounded-full opacity-60"
-                    />
-                    <motion.div
-                      animate={{ y: [5, -5, 5] }}
-                      transition={{ duration: 1.5, repeat: Infinity }}
-                      className="absolute -bottom-2 -left-2 w-3 h-3 bg-purple-500 rounded-full opacity-60"
-                    />
+                  {/* App Icon & Title */}
+                  <div className="flex items-center space-x-4">
+                    <div className="w-20 h-20 rounded-3xl bg-[#0b132b] p-3 flex items-center justify-center shadow-lg">
+                      <Image
+                        src="/genso-g-logo.png"
+                        alt="Genso"
+                        width={64}
+                        height={64}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-4xl md:text-5xl font-bold">Genso</h3>
+                      <p className="text-lg text-genso-cyan">Generative Social Media</p>
+                    </div>
+                  </div>
+
+                  {/* Description */}
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-lg">
+                    The first-of-its-kind generative social media platform. Experience a 
+                    TikTok-style feed powered entirely by AI-generated videos. Create stunning 
+                    content using industry-leading models like Veo3, Sora, and Kling.
+                  </p>
+
+                  {/* Store Buttons */}
+                  <div className="flex flex-wrap gap-4 justify-center">
+                    <Link href="https://apps.apple.com" target="_blank" className="hover:opacity-80 transition-opacity">
+                      <Image
+                        src="/app-store.png"
+                        alt="Download on the App Store"
+                        width={180}
+                        height={60}
+                        className="h-12 w-auto"
+                      />
+                    </Link>
+                    <Link href="https://play.google.com" target="_blank" className="hover:opacity-80 transition-opacity">
+                      <Image
+                        src="/google-play.png"
+                        alt="Get it on Google Play"
+                        width={180}
+                        height={60}
+                        className="h-12 w-auto"
+                      />
+                    </Link>
                   </div>
                 </motion.div>
+
+                {/* Center - iPhone Mockup */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.8 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  className="flex justify-center"
+                >
+                  <IPhoneMockup 
+                    logoSrc="/genso-g-logo.png" 
+                    logoAlt="Genso App"
+                    backgroundColor="bg-[#0b132b]"
+                  />
+                </motion.div>
+
+                {/* Right Side - Stats */}
                 <motion.div
                   initial={{ opacity: 0, x: 50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 0.8, delay: 0.2 }}
-                  className="space-y-5 md:space-y-6 text-center lg:text-left order-2"
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  className="flex flex-col items-center lg:items-start space-y-8 text-white"
                 >
-                  <div className="space-y-4">
-                    <Badge className="bg-purple-100 text-purple-800 border-purple-200">AI Video Generator</Badge>
-                    <h3 className="text-4xl font-bold tracking-tighter sm:text-5xl text-gray-900">
-                      Unwrap
-                    </h3>
-                    <p className="text-xl md:text-2xl text-gray-600">
-                      Transform photos into viral AI videos in seconds
-                    </p>
-                    <p className="text-gray-600 text-lg">
-                      Create stunning viral box-exploding AI videos from a single photo. Turn your products into 
-                      mesmerizing advertising films with just one click. Experience the future of content creation 
-                      with our cutting-edge AI technology.
-                    </p>
+                  {/* Badge */}
+                  <div className="flex items-center space-x-3 bg-genso-cyan/10 backdrop-blur-sm px-6 py-3 rounded-full border border-genso-cyan/30">
+                    <Award className="w-6 h-6 text-genso-cyan" />
+                    <span className="text-lg font-semibold text-genso-cyan">#1 Creative App</span>
                   </div>
-                  
-                  <div className="flex flex-wrap gap-2 justify-center lg:justify-start">
-                    <Badge variant="secondary" className="bg-purple-100 text-purple-800">
-                      <Camera className="w-3 h-3 mr-1" />
-                      Photo to Video
-                    </Badge>
-                    <Badge variant="secondary" className="bg-purple-100 text-purple-800">
-                      <Video className="w-3 h-3 mr-1" />
-                      Viral Effects
-                    </Badge>
-                    <Badge variant="secondary" className="bg-purple-100 text-purple-800">
-                      <Sparkles className="w-3 h-3 mr-1" />
-                      AI Generated
-                    </Badge>
-                  </div>
-                  
-                  <div className="flex flex-col gap-3 min-[400px]:flex-row pt-6 justify-center lg:justify-start">
-                    <Button className="bg-purple-600 hover:bg-purple-700 text-white text-lg px-8 py-3">
-                      <Play className="w-5 h-5 mr-2" />
-                      Coming Soon
-                    </Button>
-                    <Button variant="outline" className="border-purple-600 text-purple-600 hover:bg-purple-50 text-lg px-8 py-3">
-                      Learn More
-                      <ArrowRight className="w-5 h-5 ml-2" />
-                    </Button>
+
+                  <div className="w-full max-w-xs space-y-6">
+                    {/* Downloads */}
+                    <div className="text-center lg:text-left">
+                      <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-genso-cyan to-blue-400 bg-clip-text text-transparent">
+                        Coming
+                      </div>
+                      <div className="text-xl text-white/80 mt-2">SOON</div>
+                    </div>
+
+                    <div className="h-px bg-genso-cyan/20"></div>
+
+                    {/* AI Models */}
+                    <div className="text-center lg:text-left">
+                      <div className="text-4xl md:text-5xl font-bold text-genso-cyan">3+</div>
+                      <div className="text-xl text-white/80 mt-2">AI MODELS</div>
+                      <div className="text-sm text-white/60 mt-1">Veo3 • Sora • Kling</div>
+                    </div>
+
+                    <div className="h-px bg-genso-cyan/20"></div>
+
+                    {/* Content Types */}
+                    <div className="text-center lg:text-left">
+                      <div className="text-4xl md:text-5xl font-bold text-genso-cyan">∞</div>
+                      <div className="text-xl text-white/80 mt-2">POSSIBILITIES</div>
+                      <div className="text-sm text-white/60 mt-1">Create • Share • Explore</div>
+                    </div>
                   </div>
                 </motion.div>
               </div>
             </div>
           </section>
-        </motion.section>
 
-        {/* CTA & Contact Section */}
-        <motion.section
-          id="contact"
-          className="w-full pt-8 md:pt-12 lg:pt-16 pb-12 md:pb-20 lg:pb-24 bg-gradient-to-r from-orvion-green to-orvion-blue"
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <div className="container mx-auto px-4 md:px-6">
-            <div className="flex flex-col items-center justify-center space-y-4 text-center mb-8 pb-8 border-b border-white/30">
-              <div className="space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl text-white">
-                  Ready to Experience the Future?
-                </h2>
-                <p className="mx-auto max-w-[600px] text-white/90 md:text-xl">
-                  Join us on our journey to revolutionize mobile AI applications. Stay updated on our latest
-                  developments and be the first to try our&nbsp;apps.
-                </p>
-              </div>
-              <div className="flex w-full max-w-xs gap-4">
-                <Button className="flex-1 bg-white text-orvion-dark hover:bg-white/90">Get Notified</Button>
-                <Link href="mailto:contact@orviondigital.co" className="flex-1">
-                  <Button
-                    variant="outline"
-                    className="w-full border-white text-white hover:bg-white hover:text-orvion-dark bg-transparent"
-                  >
-                    Contact Sales
-                  </Button>
-                </Link>
-              </div>
-            </div>
-
-            <div className="grid items-center justify-center gap-4 text-center">
-              <div className="space-y-2">
-                <h2 className="text-2xl font-bold tracking-tighter text-white">Contact Us</h2>
-                <p className="mx-auto max-w-[600px] text-white/80 md:text-lg">
-                  Rather than that, for further questions, please don't hesitate to contact us.
-                </p>
-              </div>
-              <div className="mx-auto w-full max-w-sm space-y-1">
-                <p className="text-lg font-semibold text-white">contact@orviondigital.co</p>
-              </div>
-            </div>
-          </div>
-        </motion.section>
       </main>
 
       {/* Footer */}
-      <footer className="w-full py-8 bg-gray-900 text-white">
+      <footer className="w-full py-8 bg-black text-white">
         <div className="container px-4 md:px-6 mx-auto">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
             <div className="flex items-center space-x-2">
               <Image
-                src="/orvion_logo.png"
+                src="/logo-transparent.svg"
                 alt="Orvion Logo"
                 width={32}
                 height={32}

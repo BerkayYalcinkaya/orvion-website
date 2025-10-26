@@ -5,16 +5,16 @@ import { ibmPlexSans, lora } from "./fonts"
 import { cn } from "@/lib/utils"
 
 export const metadata: Metadata = {
-  title: "Orvion - Cutting-Edge AI Mobile Applications",
+  title: "Orvion - Creating What's Next in AI Native Mobile",
   description:
-    "Orvion builds innovative AI-based mobile applications like Nutrai and Dermai to transform everyday experiences.",
+    "Orvion builds innovative AI-based mobile applications to transform everyday experiences. Discover Nutrai and Genso.",
   generator: "v0.dev",
   icons: {
     icon: [
-      { url: "/orvion_logo.png", sizes: "32x32" },
-      { url: "/orvion_logo.png", sizes: "16x16", type: "image/png" },
+      { url: "/icon.png", sizes: "32x32" },
+      { url: "/icon.png", sizes: "16x16", type: "image/png" },
     ],
-    apple: "/orvion_logo.png",
+    apple: "/icon.png",
   },
 };
 

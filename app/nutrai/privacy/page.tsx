@@ -47,9 +47,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.1 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">1. Information We Collect</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">1. Information We Collect</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div>
@@ -78,9 +79,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.2 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">2. How We Use Your Information</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">2. How We Use Your Information</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <ul className="list-disc list-inside space-y-2 text-gray-600 ml-4">
@@ -99,9 +101,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.3 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">3. Information Sharing</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">3. Information Sharing</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
@@ -122,9 +125,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.4 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">4. Data Security</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">4. Data Security</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
@@ -145,9 +149,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.5 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">5. Your Rights</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">5. Your Rights</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
@@ -169,9 +174,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.6 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">6. Data Retention</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">6. Data Retention</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
@@ -194,9 +200,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.7 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">7. Children's Privacy</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">7. Children's Privacy</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
@@ -210,9 +217,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.8 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">8. Changes to This Policy</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">8. Changes to This Policy</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
@@ -234,9 +242,10 @@ export default function NutraiPrivacyPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.8, delay: 0.9 }}
+                className="border-nutrai-blue/20"
               >
                 <CardHeader>
-                  <CardTitle className="text-2xl">9. Contact Us</CardTitle>
+                  <CardTitle className="text-2xl text-nutrai-blue">9. Contact Us</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <p className="text-gray-600">
