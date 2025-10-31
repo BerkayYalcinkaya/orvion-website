@@ -18,9 +18,9 @@ export default function Component() {
     <div className="flex flex-col min-h-screen bg-white">
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="w-full min-h-screen flex items-center justify-center bg-[#96213A] relative overflow-hidden">
-          <div className="container px-4 md:px-6 mx-auto relative z-10">
-            <div className="flex flex-col items-center justify-center space-y-8 md:space-y-12 text-center max-w-5xl mx-auto">
+        <section className="w-full min-h-screen flex items-center justify-center bg-[#96213A] relative overflow-hidden py-12 md:py-0">
+          <div className="container px-6 md:px-6 mx-auto relative z-10">
+            <div className="flex flex-col items-center justify-center space-y-12 md:space-y-12 text-center max-w-5xl mx-auto">
               {/* Logo - Back on top and bigger */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
@@ -43,12 +43,12 @@ export default function Component() {
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
-                className="space-y-4"
+                className="space-y-6 md:space-y-4"
               >
-                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-wide text-white/90 font-lora max-w-3xl mx-auto">
+                <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-light tracking-wide text-white/90 font-lora max-w-3xl mx-auto px-4">
                   Creating what's next in AI Native Mobile
                 </h1>
-                <p className="text-sm md:text-base lg:text-lg xl:text-xl text-white/70 max-w-2xl mx-auto">
+                <p className="text-sm md:text-base lg:text-lg xl:text-xl text-white/70 max-w-2xl mx-auto px-4">
                   Experience the next generation of AI-powered mobile applications that transform how you live, work, and create.
                 </p>
               </motion.div>
@@ -58,7 +58,7 @@ export default function Component() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
-                className="flex flex-col sm:flex-row gap-4 pt-4"
+                className="flex flex-col sm:flex-row gap-4 pt-6 md:pt-4"
               >
                 <Link href="#apps">
                   <Button className="bg-white text-[#96213A] hover:bg-white/90 text-lg px-8 py-6 rounded-full shadow-lg">
@@ -80,26 +80,26 @@ export default function Component() {
         </section>
 
         {/* Nutrai App Section - Full Screen */}
-          <section id="apps" className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-nutrai-blue via-nutrai-blue to-blue-600 relative overflow-hidden">
+          <section id="apps" className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-nutrai-blue via-nutrai-blue to-blue-600 relative overflow-hidden py-16 md:py-20">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-300/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
             </div>
             
-            <div className="container px-4 md:px-8 lg:px-16 mx-auto relative z-10">
-              <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center">
+            <div className="container px-6 md:px-8 lg:px-16 mx-auto relative z-10">
+              <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-12 md:gap-8 lg:gap-16 items-center">
                 {/* Left Side - Content */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col space-y-6 text-white"
+                  className="flex flex-col space-y-8 md:space-y-6 text-white"
                 >
                   {/* App Icon & Title */}
                   <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 rounded-3xl bg-[#3253a1] p-3 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 md:w-20 md:h-20 rounded-3xl bg-[#3253a1] p-3 flex items-center justify-center shadow-lg">
                       <Image
                         src="/nutrai_logo.png"
                         alt="Nutrai"
@@ -110,19 +110,19 @@ export default function Component() {
                     </div>
                     <div>
                       <h3 className="text-4xl md:text-5xl font-bold">Nutrai</h3>
-                      <p className="text-lg text-white/80">AI Nutrition Assistant</p>
+                      <p className="text-lg md:text-lg text-white/80 mt-2">AI Nutrition Assistant</p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-lg">
+                  <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-lg">
                     Your personal AI nutritionist that helps you achieve your health goals. 
                     Get personalized meal plans, track calories, and receive expert nutrition 
                     advice powered by advanced AI technology.
                   </p>
 
                   {/* Store Buttons */}
-                  <div className="flex flex-wrap gap-4 justify-center">
+                  <div className="flex flex-wrap gap-4 justify-center pt-2">
                     <Link href="https://apps.apple.com/tr/app/nutrai-diyet-kalori-takibi/id6746746820?l=tr" target="_blank" className="hover:opacity-80 transition-opacity">
                       <Image
                         src="/app-store.png"
@@ -150,7 +150,7 @@ export default function Component() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="flex justify-center"
+                  className="flex justify-center py-8 md:py-0"
                 >
                   <IPhoneMockup 
                     logoSrc="/nutrai_logo.png" 
@@ -165,7 +165,7 @@ export default function Component() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="flex flex-col items-center lg:items-start space-y-8 text-white"
+                  className="flex flex-col items-center lg:items-start space-y-10 md:space-y-8 text-white"
                 >
                   {/* Badge */}
                   <div className="flex items-center space-x-3 bg-white/10 backdrop-blur-sm px-6 py-3 rounded-full border border-white/30">
@@ -173,11 +173,11 @@ export default function Component() {
                     <span className="text-lg font-semibold">#1 Health App</span>
                   </div>
 
-                  <div className="w-full max-w-xs space-y-6">
+                  <div className="w-full max-w-xs space-y-8 md:space-y-6">
                     {/* Downloads */}
                     <div className="text-center lg:text-left">
                       <div className="text-5xl md:text-6xl font-bold">2M+</div>
-                      <div className="text-xl text-white/80 mt-2">DOWNLOADS</div>
+                      <div className="text-xl text-white/80 mt-3 md:mt-2">DOWNLOADS</div>
                     </div>
 
                     <div className="h-px bg-white/20"></div>
@@ -198,7 +198,7 @@ export default function Component() {
                           ))}
                         </div>
                       </div>
-                      <div className="text-xl text-white/80 mt-2">RATING</div>
+                      <div className="text-xl text-white/80 mt-3 md:mt-2">RATING</div>
                     </div>
 
                     <div className="h-px bg-white/20"></div>
@@ -206,7 +206,7 @@ export default function Component() {
                     {/* Users */}
                     <div className="text-center lg:text-left">
                       <div className="text-5xl md:text-6xl font-bold">500K+</div>
-                      <div className="text-xl text-white/80 mt-2">ACTIVE USERS</div>
+                      <div className="text-xl text-white/80 mt-3 md:mt-2">ACTIVE USERS</div>
                     </div>
                   </div>
                 </motion.div>
@@ -215,26 +215,26 @@ export default function Component() {
           </section>
 
           {/* Genso App Section - Full Screen */}
-          <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-genso-navy via-genso-navy to-gray-900 relative overflow-hidden">
+          <section className="w-full min-h-screen flex items-center justify-center bg-gradient-to-br from-genso-navy via-genso-navy to-gray-900 relative overflow-hidden py-16 md:py-20">
             {/* Animated background elements */}
             <div className="absolute inset-0 overflow-hidden">
               <div className="absolute -top-40 -right-40 w-80 h-80 bg-genso-cyan/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob"></div>
               <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-blue-400/20 rounded-full mix-blend-multiply filter blur-3xl opacity-70 animate-blob animation-delay-2000"></div>
             </div>
             
-            <div className="container px-4 md:px-8 lg:px-16 mx-auto relative z-10">
-              <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-8 lg:gap-16 items-center">
+            <div className="container px-6 md:px-8 lg:px-16 mx-auto relative z-10">
+              <div className="grid lg:grid-cols-[1fr_auto_1fr] gap-12 md:gap-8 lg:gap-16 items-center">
                 {/* Left Side - Content */}
                 <motion.div
                   initial={{ opacity: 0, x: -50 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8 }}
-                  className="flex flex-col space-y-6 text-white"
+                  className="flex flex-col space-y-8 md:space-y-6 text-white"
                 >
                   {/* App Icon & Title */}
                   <div className="flex items-center space-x-4">
-                    <div className="w-20 h-20 rounded-3xl bg-[#0b132b] p-3 flex items-center justify-center shadow-lg">
+                    <div className="w-20 h-20 md:w-20 md:h-20 rounded-3xl bg-[#0b132b] p-3 flex items-center justify-center shadow-lg">
                       <Image
                         src="/genso-g-logo.png"
                         alt="Genso"
@@ -245,19 +245,19 @@ export default function Component() {
                     </div>
                     <div>
                       <h3 className="text-4xl md:text-5xl font-bold">Genso</h3>
-                      <p className="text-lg text-genso-cyan">Generative Social Media</p>
+                      <p className="text-lg md:text-lg text-genso-cyan mt-2">Generative Social Media</p>
                     </div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-lg md:text-xl text-white/90 leading-relaxed max-w-lg">
+                  <p className="text-base md:text-lg lg:text-xl text-white/90 leading-relaxed max-w-lg">
                     The first-of-its-kind generative social media platform. Experience a 
                     TikTok-style feed powered entirely by AI-generated videos. Create stunning 
                     content using industry-leading models like Veo3, Sora, and Kling.
                   </p>
 
                   {/* Store Buttons */}
-                  <div className="flex flex-wrap gap-4 justify-center">
+                  <div className="flex flex-wrap gap-4 justify-center pt-2">
                     <Link href="https://apps.apple.com" target="_blank" className="hover:opacity-80 transition-opacity">
                       <Image
                         src="/app-store.png"
@@ -285,7 +285,7 @@ export default function Component() {
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.2 }}
-                  className="flex justify-center"
+                  className="flex justify-center py-8 md:py-0"
                 >
                   <IPhoneMockup 
                     logoSrc="/genso-g-logo.png" 
@@ -300,7 +300,7 @@ export default function Component() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.8, delay: 0.4 }}
-                  className="flex flex-col items-center lg:items-start space-y-8 text-white"
+                  className="flex flex-col items-center lg:items-start space-y-10 md:space-y-8 text-white"
                 >
                   {/* Badge */}
                   <div className="flex items-center space-x-3 bg-genso-cyan/10 backdrop-blur-sm px-6 py-3 rounded-full border border-genso-cyan/30">
@@ -308,13 +308,13 @@ export default function Component() {
                     <span className="text-lg font-semibold text-genso-cyan">#1 Creative App</span>
                   </div>
 
-                  <div className="w-full max-w-xs space-y-6">
+                  <div className="w-full max-w-xs space-y-8 md:space-y-6">
                     {/* Downloads */}
                     <div className="text-center lg:text-left">
                       <div className="text-5xl md:text-6xl font-bold bg-gradient-to-r from-genso-cyan to-blue-400 bg-clip-text text-transparent">
                         Coming
                       </div>
-                      <div className="text-xl text-white/80 mt-2">SOON</div>
+                      <div className="text-xl text-white/80 mt-3 md:mt-2">SOON</div>
                     </div>
 
                     <div className="h-px bg-genso-cyan/20"></div>
@@ -322,8 +322,8 @@ export default function Component() {
                     {/* AI Models */}
                     <div className="text-center lg:text-left">
                       <div className="text-4xl md:text-5xl font-bold text-genso-cyan">3+</div>
-                      <div className="text-xl text-white/80 mt-2">AI MODELS</div>
-                      <div className="text-sm text-white/60 mt-1">Veo3 • Sora • Kling</div>
+                      <div className="text-xl text-white/80 mt-3 md:mt-2">AI MODELS</div>
+                      <div className="text-sm text-white/60 mt-2 md:mt-1">Veo3 • Sora • Kling</div>
                     </div>
 
                     <div className="h-px bg-genso-cyan/20"></div>
@@ -331,8 +331,8 @@ export default function Component() {
                     {/* Content Types */}
                     <div className="text-center lg:text-left">
                       <div className="text-4xl md:text-5xl font-bold text-genso-cyan">∞</div>
-                      <div className="text-xl text-white/80 mt-2">POSSIBILITIES</div>
-                      <div className="text-sm text-white/60 mt-1">Create • Share • Explore</div>
+                      <div className="text-xl text-white/80 mt-3 md:mt-2">POSSIBILITIES</div>
+                      <div className="text-sm text-white/60 mt-2 md:mt-1">Create • Share • Explore</div>
                     </div>
                   </div>
                 </motion.div>
